@@ -1,0 +1,11 @@
+langchain
+langchain-groq
+langchain-community
+langchain-google-genai
+langchain-text-splitters
+langchain-chroma
+python-dotenv
+pypdf
+streamlit
+requests
+fastapi
