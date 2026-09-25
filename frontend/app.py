@@ -1,9 +1,6 @@
 import streamlit as st 
 import requests
-from langchain_google_genai import GoogleGenerativeAIEmbeddings
-from langchain_chroma import Chroma
 
-import os
 from dotenv import load_dotenv
 load_dotenv()
 
