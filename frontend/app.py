@@ -7,8 +7,6 @@ import os
 from dotenv import load_dotenv
 load_dotenv()
 
-BACKEND_URL="http://127.0.0.1:8000"
-
 st.title(":blue[NexoraDocs AI]")
 st.markdown("An AI-powered document assistant")
 
@@ -35,11 +33,15 @@ if query:
 
     with st.chat_message("assistant"):
         with st.spinner("searching..."):
-            BACKEND_URL="http://127.0.0.1:8000"
-            response=requests.post(
-            f"{BACKEND_URL}/chat",
-            json={"query":query}
-            )
+            BACKEND_URL="https://nexoralabs-itv0.onrender.com"
+            try:
+                response=requests.post(
+                f"{BACKEND_URL}/chat",
+                json={"query":query},
+                timeout=20
+                )
+            except Exception as e:
+                print(f"Error because {e}")
 
             answer=response.json()["answer"]
         st.markdown(answer)
