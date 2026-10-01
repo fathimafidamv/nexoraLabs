@@ -35,7 +35,7 @@ if query:
                 response=requests.post(
                 f"{BACKEND_URL}/chat",
                 json={"query":query},
-                timeout=20
+                timeout=60
                 )
             except Exception as e:
                 print(f"Error because {e}")
